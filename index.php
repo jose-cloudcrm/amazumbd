@@ -6,7 +6,7 @@
     <title>Amazum+</title>
     <link rel="shortcut icon" type="amazumicone.ico" href="./images/amazumicone.ico">
     <link rel="stylesheet" href="./lib/bootstrap.min.css">
-    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./public/main.css">
 </head>
 <body>
     <header id="cabecalho">

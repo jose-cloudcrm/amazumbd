@@ -8,7 +8,7 @@ $name = filter_input(INPUT_POST, 'name');
 $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 $senha = filter_input(INPUT_POST, 'senha');
 
-$hash = password_hash($senha, PASSWORD_DEFAULT);
+$senhacrypto = password_hash($senha, PASSWORD_DEFAULT);
 
 if($name && $email){
 
@@ -16,7 +16,7 @@ if($name && $email){
         $novoUsuario = new Usuario();
         $novoUsuario->setNome($name);
         $novoUsuario->setEmail($email);
-        $novoUsuario->setSenha($senha);
+        $novoUsuario->setSenha($senhacrypto);
 
         $usuarioDao->add( $novoUsuario );
 

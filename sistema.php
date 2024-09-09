@@ -1,13 +1,14 @@
 <?php 
 session_start();
-    if((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) ==  true)){
-        unset($_SESSION['email']);
-        unset($_SESSION['senha']);
-        header("Location: login.php");
-    } else {
-        $logado = $_SESSION['email'];
-    }
+if (!isset($_SESSION['email'])) {
+    unset($_SESSION['email']);
+    header("Location: login.php");
+    exit();
+} else {
+    $logado = $_SESSION['email'];
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,6 +43,11 @@ session_start();
             height: auto;
             padding-top: 150px;
         }
+        h1{
+            text-align: center;
+            padding-top: 130px;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -62,7 +68,11 @@ session_start();
             </div>
         </div>
     </header>
-
+    <div class="container">
+        <div class="row">
+            <h1>Ola <?= $_SESSION['email']; ?></h1>
+        </div>
+    </div>
     <div class="video-container">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/YC8SLpnxsL4" title="One Piece Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
